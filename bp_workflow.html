@@ -1,0 +1,540 @@
+Certainly! Here is the completed HTML code including the section "START ON DATE OF ADMISSION (if not done earlier)":
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Chart</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+        h1, h2, h3, h4, li {
+            cursor: pointer;
+        }
+        .draft {
+            color: red;
+        }
+        .final {
+            color: green;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleStatus(headerId) {
+            const dateStamp = document.getElementById(`date-${headerId}`);
+            const draftCheckBox = document.getElementById(`draft-${headerId}`);
+            const finalCheckBox = document.getElementById(`final-${headerId}`);
+            const header = document.getElementById(headerId);
+
+            const now = new Date();
+            const dateString = now.toLocaleString();
+            document.getElementById(`timestamp-${headerId}`).innerText = dateString;
+
+            dateStamp.classList.toggle('hidden');
+
+            draftCheckBox.addEventListener('click', () => {
+                header.classList.add('draft');
+                header.classList.remove('final');
+            });
+
+            finalCheckBox.addEventListener('click', () => {
+                header.classList.add('final');
+                header.classList.remove('draft');
+            });
+        }
+    </script>
+</head>
+<body>
+
+<h1 id="header1" onclick="toggleStatus('header1')">PREADMISSION AND ADMISSION WORKFLOW</h1>
+<div id="date-header1" class="hidden">
+    <p>Date: <span id="timestamp-header1"></span></p>
+    <label><input type="radio" id="draft-header1" name="status-header1"> Draft</label>
+    <label><input type="radio" id="final-header1" name="status-header1"> Final</label>
+</div>
+
+<h2 id="header2" onclick="toggleStatus('header2')">ALL ASSESSMENTS MUST BE DOCUMENTED EACH DAY IN THE SUD PROGRESS NOTE</h2>
+<div id="date-header2" class="hidden">
+    <p>Date: <span id="timestamp-header2"></span></p>
+    <label><input type="radio" id="draft-header2" name="status-header2"> Draft</label>
+    <label><input type="radio" id="final-header2" name="status-header2"> Final</label>
+</div>
+
+<h3 id="header3" onclick="toggleStatus('header3')">PREADMISSION - FIRST VISIT- MUST BE FINALIZED</h3>
+<div id="date-header3" class="hidden">
+    <p>Date: <span id="timestamp-header3"></span></p>
+    <label><input type="radio" id="draft-header3" name="status-header3"> Draft</label>
+    <label><input type="radio" id="final-header3" name="status-header3"> Final</label>
+</div>
+<ul>
+    <li id="item1" onclick="toggleStatus('item1')">HARD COPY CONSENTS</li>
+    <div id="date-item1" class="hidden">
+        <p>Date: <span id="timestamp-item1"></span></p>
+        <label><input type="radio" id="draft-item1" name="status-item1"> Draft</label>
+        <label><input type="radio" id="final-item1" name="status-item1"> Final</label>
+    </div>
+    <ul>
+        <li id="item2" onclick="toggleStatus('item2')">Scan into Record Under SUD CLIN Consents</li>
+        <div id="date-item2" class="hidden">
+            <p>Date: <span id="timestamp-item2"></span></p>
+            <label><input type="radio" id="draft-item2" name="status-item2"> Draft</label>
+            <label><input type="radio" id="final-item2" name="status-item2"> Final</label>
+        </div>
+        <li id="item3" onclick="toggleStatus('item3')">JB FINAL Authorization  11.30</li>
+        <div id="date-item3" class="hidden">
+            <p>Date: <span id="timestamp-item3"></span></p>
+            <label><input type="radio" id="draft-item3" name="status-item3"> Draft</label>
+            <label><input type="radio" id="final-item3" name="status-item3"> Final</label>
+        </div>
+        <li id="item4" onclick="toggleStatus('item4')">Brighter Pathways Brooklyn Program Rules</li>
+        <div id="date-item4" class="hidden">
+            <p>Date: <span id="timestamp-item4"></span></p>
+            <label><input type="radio" id="draft-item4" name="status-item4"> Draft</label>
+            <label><input type="radio" id="final-item4" name="status-item4"> Final</label>
+        </div>
+        <li id="item5" onclick="toggleStatus('item5')">PSYCKES Consent</li>
+        <div id="date-item5" class="hidden">
+            <p>Date: <span id="timestamp-item5"></span></p>
+            <label><input type="radio" id="draft-item5" name="status-item5"> Draft</label>
+            <label><input type="radio" id="final-item5" name="status-item5"> Final</label>
+        </div>
+        <li id="item6" onclick="toggleStatus('item6')">LOCADTR Consent (This gets scanned into SUD FIN Consents)</li>
+        <div id="date-item6" class="hidden">
+            <p>Date: <span id="timestamp-item6"></span></p>
+            <label><input type="radio" id="draft-item6" name="status-item6"> Draft</label>
+            <label><input type="radio" id="final-item6" name="status-item6"> Final</label>
+        </div>
+        <li id="item7" onclick="toggleStatus('item7')">OMH 960 HIPAA form</li>
+        <div id="date-item7" class="hidden">
+            <p>Date: <span id="timestamp-item7"></span></p>
+            <label><input type="radio" id="draft-item7" name="status-item7"> Draft</label>
+            <label><input type="radio" id="final-item7" name="status-item7"> Final</label>
+        </div>
+    </ul>
+    <li id="item8" onclick="toggleStatus('item8')">Client should also be given the After Hours Flyer</li>
+    <div id="date-item8" class="hidden">
+        <p>Date: <span id="timestamp-item8"></span></p>
+        <label><input type="radio" id="draft-item8" name="status-item8"> Draft</label>
+        <label><input type="radio" id="final-item8" name="status-item8"> Final</label>
+    </div>
+</ul>
+
+<h3 id="header4" onclick="toggleStatus('header4')">PREADMISSION - FIRST VISIT- MUST BE FINALIZED</h3>
+<div id="date-header4" class="hidden">
+    <p>Date: <span id="timestamp-header4"></span></p>
+    <label><input type="radio" id="draft-header4" name="status-header4"> Draft</label>
+    <label><input type="radio" id="final-header4" name="status-header4"> Final</label>
+</div>
+<ul>
+    <li id="item9" onclick="toggleStatus('item9')">NETSMART FORMS</li>
+    <div id="date-item9" class="hidden">
+        <p>Date: <span id="timestamp-item9"></span></p>
+        <label><input type="radio" id="draft-item9" name="status-item9"> Draft</label>
+        <label><input type="radio" id="final-item9" name="status-item9"> Final</label>
+    </div>
+    <ul>
+        <li id="item10" onclick="toggleStatus('item10')">Diagnosis – must be Substance Use disorder</li>
+        <div id="date-item10" class="hidden">
+            <p>Date: <span id="timestamp-item10"></span></p>
+            <label><input type="radio" id="draft-item10" name="status-item10"> Draft</label>
+            <label><input type="radio" id="final-item10" name="status-item10"> Final</label>
+        </div>
+        <li id="item11" onclick="toggleStatus('item11')">MSSI SA (18yo and above) or CRAFFT (12yo-17yo)</li>
+        <div id="date-item11" class="hidden">
+            <p>Date: <span id="timestamp-item11"></span></p>
+            <label><input type="radio" id="draft-item11" name="status-item11"> Draft</label>
+            <label><input type="radio" id="final-item11" name="status-item11
+
+"> Final</label>
+        </div>
+        <li id="item12" onclick="toggleStatus('item12')">RODS</li>
+        <div id="date-item12" class="hidden">
+            <p>Date: <span id="timestamp-item12"></span></p>
+            <label><input type="radio" id="draft-item12" name="status-item12"> Draft</label>
+            <label><input type="radio" id="final-item12" name="status-item12"> Final</label>
+        </div>
+        <li id="item13" onclick="toggleStatus('item13')">SOWS (If using opioids)</li>
+        <div id="date-item13" class="hidden">
+            <p>Date: <span id="timestamp-item13"></span></p>
+            <label><input type="radio" id="draft-item13" name="status-item13"> Draft</label>
+            <label><input type="radio" id="final-item13" name="status-item13"> Final</label>
+        </div>
+        <li id="item14" onclick="toggleStatus('item14')">Columbia CSSRS Initial (suicide screening). * If yes speak with supervisor</li>
+        <div id="date-item14" class="hidden">
+            <p>Date: <span id="timestamp-item14"></span></p>
+            <label><input type="radio" id="draft-item14" name="status-item14"> Draft</label>
+            <label><input type="radio" id="final-item14" name="status-item14"> Final</label>
+        </div>
+        <li id="item15" onclick="toggleStatus('item15')">Stanley Brown Safety Plan (*if client is at-risk for suicide)</li>
+        <div id="date-item15" class="hidden">
+            <p>Date: <span id="timestamp-item15"></span></p>
+            <label><input type="radio" id="draft-item15" name="status-item15"> Draft</label>
+            <label><input type="radio" id="final-item15" name="status-item15"> Final</label>
+        </div>
+        <li id="item16" onclick="toggleStatus('item16')">Modified Mini Screen (MMS) (18 yo and above) or PHQ-9 and GAD-7 (12yo – 17yo)</li>
+        <div id="date-item16" class="hidden">
+            <p>Date: <span id="timestamp-item16"></span></p>
+            <label><input type="radio" id="draft-item16" name="status-item16"> Draft</label>
+            <label><input type="radio" id="final-item16" name="status-item16"> Final</label>
+        </div>
+    </ul>
+</ul>
+
+<h3 id="header5" onclick="toggleStatus('header5')">OTHER FORMS THAT MUST BE COMPLETED IN PREADMISSION</h3>
+<div id="date-header5" class="hidden">
+    <p>Date: <span id="timestamp-header5"></span></p>
+    <label><input type="radio" id="draft-header5" name="status-header5"> Draft</label>
+    <label><input type="radio" id="final-header5" name="status-header5"> Final</label>
+</div>
+<ul>
+    <li id="item17" onclick="toggleStatus('item17')">PAS 44</li>
+    <div id="date-item17" class="hidden">
+        <p>Date: <span id="timestamp-item17"></span></p>
+        <label><input type="radio" id="draft-item17" name="status-item17"> Draft</label>
+        <label><input type="radio" id="final-item17" name="status-item17"> Final</label>
+    </div>
+    <ul>
+        <li id="item18" onclick="toggleStatus('item18')">Use hard copy initially to gather information</li>
+        <div id="date-item18" class="hidden">
+            <p>Date: <span id="timestamp-item18"></span></p>
+            <label><input type="radio" id="draft-item18" name="status-item18"> Draft</label>
+            <label><input type="radio" id="final-item18" name="status-item18"> Final</label>
+        </div>
+        <li id="item19" onclick="toggleStatus('item19')">Cannot be saved in Draft</li>
+        <div id="date-item19" class="hidden">
+            <p>Date: <span id="timestamp-item19"></span></p>
+            <label><input type="radio" id="draft-item19" name="status-item19"> Draft</label>
+            <label><input type="radio" id="final-item19" name="status-item19"> Final</label>
+        </div>
+        <li id="item20" onclick="toggleStatus('item20')">On Netsmart PAS 44 form where it says Default PRU No. From Other PRU No. 53786</li>
+        <div id="date-item20" class="hidden">
+            <p>Date: <span id="timestamp-item20"></span></p>
+            <label><input type="radio" id="draft-item20" name="status-item20"> Draft</label>
+            <label><input type="radio" id="final-item20" name="status-item20"> Final</label>
+        </div>
+    </ul>
+    <li id="item21" onclick="toggleStatus('item21')">LOCADTR (Must finalize prior to Admission)</li>
+    <div id="date-item21" class="hidden">
+        <p>Date: <span id="timestamp-item21"></span></p>
+        <label><input type="radio" id="draft-item21" name="status-item21"> Draft</label>
+        <label><input type="radio" id="final-item21" name="status-item21"> Final</label>
+    </div>
+    <ul>
+        <li id="item22" onclick="toggleStatus('item22')">Completed in HCS portal</li>
+        <div id="date-item22" class="hidden">
+            <p>Date: <span id="timestamp-item22"></span></p>
+            <label><input type="radio" id="draft-item22" name="status-item22"> Draft</label>
+            <label><input type="radio" id="final-item22" name="status-item22"> Final</label>
+        </div>
+        <li id="item23" onclick="toggleStatus('item23')">Must be completed in 1 session (can’t be left in Draft)</li>
+        <div id="date-item23" class="hidden">
+            <p>Date: <span id="timestamp-item23"></span></p>
+            <label><input type="radio" id="draft-item23" name="status-item23"> Draft</label>
+            <label><input type="radio" id="final-item23" name="status-item23"> Final</label>
+        </div>
+        <li id="item24" onclick="toggleStatus('item24')">Print and scan into record under FIN Authorizations</li>
+        <div id="date-item24" class="hidden">
+            <p>Date: <span id="timestamp-item24"></span></p>
+            <label><input type="radio" id="draft-item24" name="status-item24"> Draft</label>
+            <label><input type="radio" id="final-item24" name="status-item24"> Final</label>
+        </div>
+    </ul>
+    <li id="item25" onclick="toggleStatus('item25')">Fagerstrom</li>
+    <div id="date-item25" class="hidden">
+        <p>Date: <span id="timestamp-item25"></span></p>
+        <label><input type="radio" id="draft-item25" name="status-item25"> Draft</label>
+        <label><input type="radio" id="final-item25" name="status-item25"> Final</label>
+    </div>
+    <li id="item26" onclick="toggleStatus('item26')">Mental Status Exam (MSE)</li>
+    <div id="date-item26" class="hidden">
+        <p>Date: <span id="timestamp-item26"></span></p>
+        <label><input type="radio" id="draft-item26" name="status-item26"> Draft</label>
+        <label><input type="radio" id="final-item26" name="status-item26"> Final</label>
+    </div>
+    <li id="item27" onclick="toggleStatus('item27')">BBGS (Brief Biosocial Gambling Screen)</li>
+    <div id="date-item27" class="hidden">
+        <p>Date: <span id="timestamp-item27"></span></p>
+        <label><input type="radio" id="draft-item27" name="status-item27"> Draft</label>
+        <label><input type="radio" id="final-item27" name="status-item27"> Final</label>
+    </div>
+    <li id="item28" onclick="toggleStatus('item28')">Ask about history of overdose. * If overdose within past couple of months or if actively using opioids speak with supervisor</li>
+    <div id="date-item28" class="hidden">
+        <p>Date: <span id="timestamp-item28"></span></p>
+        <
+
+label><input type="radio" id="draft-item28" name="status-item28"> Draft</label>
+        <label><input type="radio" id="final-item28" name="status-item28"> Final</label>
+    </div>
+    <li id="item29" onclick="toggleStatus('item29')">Offer Narcan</li>
+    <div id="date-item29" class="hidden">
+        <p>Date: <span id="timestamp-item29"></span></p>
+        <label><input type="radio" id="draft-item29" name="status-item29"> Draft</label>
+        <label><input type="radio" id="final-item29" name="status-item29"> Final</label>
+    </div>
+    <li id="item30" onclick="toggleStatus('item30')">Complete Netsmart Narcan Education/Kit Dispense form</li>
+    <div id="date-item30" class="hidden">
+        <p>Date: <span id="timestamp-item30"></span></p>
+        <label><input type="radio" id="draft-item30" name="status-item30"> Draft</label>
+        <label><input type="radio" id="final-item30" name="status-item30"> Final</label>
+    </div>
+    <li id="item31" onclick="toggleStatus('item31')">Document in SUD Progress Note. * If overdose within past couple of months or if actively using opioids speak with supervisor</li>
+    <div id="date-item31" class="hidden">
+        <p>Date: <span id="timestamp-item31"></span></p>
+        <label><input type="radio" id="draft-item31" name="status-item31"> Draft</label>
+        <label><input type="radio" id="final-item31" name="status-item31"> Final</label>
+    </div>
+</ul>
+
+<h3 id="header6" onclick="toggleStatus('header6')">ADMISSION DATE (When all assessments above are complete)</h3>
+<div id="date-header6" class="hidden">
+    <p>Date: <span id="timestamp-header6"></span></p>
+    <label><input type="radio" id="draft-header6" name="status-header6"> Draft</label>
+    <label><input type="radio" id="final-header6" name="status-header6"> Final</label>
+</div>
+<ul>
+    <li id="item32" onclick="toggleStatus('item32')">Clerical staff must change the episode from 4041P to 4041 before any sessions are done.</li>
+    <div id="date-item32" class="hidden">
+        <p>Date: <span id="timestamp-item32"></span></p>
+        <label><input type="radio" id="draft-item32" name="status-item32"> Draft</label>
+        <label><input type="radio" id="final-item32" name="status-item32"> Final</label>
+    </div>
+    <li id="item33" onclick="toggleStatus('item33')">Make sure your appointment is scheduled in the correct episode (i.e. 4041 not 4041P)</li>
+    <div id="date-item33" class="hidden">
+        <p>Date: <span id="timestamp-item33"></span></p>
+        <label><input type="radio" id="draft-item33" name="status-item33"> Draft</label>
+        <label><input type="radio" id="final-item33" name="status-item33"> Final</label>
+    </div>
+    <li id="item34" onclick="toggleStatus('item34')">Counseling/therapy is now done as service code SUD06- Individual Therapy (Brief) (25 minutes) or SUD07- Individual Therapy (Normative) (45 minutes)</li>
+    <div id="date-item34" class="hidden">
+        <p>Date: <span id="timestamp-item34"></span></p>
+        <label><input type="radio" id="draft-item34" name="status-item34"> Draft</label>
+        <label><input type="radio" id="final-item34" name="status-item34"> Final</label>
+    </div>
+    <li id="item35" onclick="toggleStatus('item35')">NETSMART FORMS</li>
+    <div id="date-item35" class="hidden">
+        <p>Date: <span id="timestamp-item35"></span></p>
+        <label><input type="radio" id="draft-item35" name="status-item35"> Draft</label>
+        <label><input type="radio" id="final-item35" name="status-item35"> Final</label>
+    </div>
+    <ul>
+        <li id="item36" onclick="toggleStatus('item36')">SUD Admission Acceptance Form</li>
+        <div id="date-item36" class="hidden">
+            <p>Date: <span id="timestamp-item36"></span></p>
+            <label><input type="radio" id="draft-item36" name="status-item36"> Draft</label>
+            <label><input type="radio" id="final-item36" name="status-item36"> Final</label>
+        </div>
+        <ul>
+                    <li id="item37" onclick="toggleStatus('item37')">Signed by LCSW NPP or MD</li>
+        <div id="date-item37" class="hidden">
+            <p>Date: <span id="timestamp-item37"></span></p>
+            <label><input type="radio" id="draft-item37" name="status-item37"> Draft</label>
+            <label><input type="radio" id="final-item37" name="status-item37"> Final</label>
+        </div>
+        <li id="item38" onclick="toggleStatus('item38')">Scanned under FIN Authorizations</li>
+        <div id="date-item38" class="hidden">
+            <p>Date: <span id="timestamp-item38"></span></p>
+            <label><input type="radio" id="draft-item38" name="status-item38"> Draft</label>
+            <label><input type="radio" id="final-item38" name="status-item38"> Final</label>
+        </div>
+    </ul>
+    <li id="item39" onclick="toggleStatus('item39')">SUD Client Acceptance Letter</li>
+    <div id="date-item39" class="hidden">
+        <p>Date: <span id="timestamp-item39"></span></p>
+        <label><input type="radio" id="draft-item39" name="status-item39"> Draft</label>
+        <label><input type="radio" id="final-item39" name="status-item39"> Final</label>
+    </div>
+    <ul>
+        <li id="item40" onclick="toggleStatus('item40')">Signed by client LCSW NPP or MD</li>
+        <div id="date-item40" class="hidden">
+            <p>Date: <span id="timestamp-item40"></span></p>
+            <label><input type="radio" id="draft-item40" name="status-item40"> Draft</label>
+            <label><input type="radio" id="final-item40" name="status-item40"> Final</label>
+        </div>
+        <li id="item41" onclick="toggleStatus('item41')">Scanned under FIN Authorizations</li>
+        <div id="date-item41" class="hidden">
+            <p>Date: <span id="timestamp-item41"></span></p>
+            <label><input type="radio" id="draft-item41" name="status-item41"> Draft</label>
+            <label><input type="radio" id="final-item41" name="status-item41"> Final</label>
+        </div>
+    </ul>
+</ul>
+
+<h3 id="header7" onclick="toggleStatus('header7')">START ON DATE OF ADMISSION (if not done earlier)</h3>
+<div id="date-header7" class="hidden">
+    <p>Date: <span id="timestamp-header7"></span></p>
+    <label><input type="radio" id="draft-header7" name="status-header7"> Draft</label>
+    <label><input type="radio" id="final-header7" name="status-header7"> Final</label>
+</div>
+<ul>
+    <li id="item42" onclick="toggleStatus('item42')">PC PTSD</li>
+    <div id="date-item42" class="hidden">
+        <p>Date: <span id="timestamp-item42"></span></p>
+        <label><input type="radio" id="draft-item42" name="status-item42"> Draft</label>
+        <label><input type="radio" id="final-item42" name="status-item42"> Final</label>
+    </div>
+    <li id="item43" onclick="toggleStatus('item43')">Addictive Behaviors Assessment</li>
+    <div id="date-item43" class="hidden">
+        <p>Date: <span id="timestamp-item43"></span></p>
+        <label><input type="radio" id="draft-item43" name="status-item43"> Draft</label>
+        <label><input type="radio" id="final-item43" name="status-item43"> Final</label>
+    </div>
+    <li id="item44" onclick="toggleStatus('item44')">SUD Behavioral Health Assessment</li>
+    <div id="date-item44" class="hidden">
+        <p>Date: <span id="timestamp-item44"></span></p>
+        <label><input type="radio" id="draft-item44" name="status-item44"> Draft</label>
+        <label><input type="radio" id="final-item44" name="status-item44"> Final</label>
+    </div>
+    <li id="item45" onclick="toggleStatus('item45')">PAS 44</li>
+    <div id="date-item45" class="hidden">
+        <p>Date: <span id="timestamp-item45"></span></p>
+        <label><input type="radio" id="draft-item45" name="status-item45"> Draft</label>
+        <label><input type="radio" id="final-item45" name="status-item45"> Final</label>
+    </div>
+    <li id="item46" onclick="toggleStatus('item46')">Clinician should work with clerical to schedule appointment with RN and NPP</li>
+    <div id="date-item46" class="hidden">
+        <p>Date: <span id="timestamp-item46"></span></p>
+        <label><input type="radio" id="draft-item46" name="status-item46"> Draft</label>
+        <label><input type="radio" id="final-item46" name="status-item46"> Final</label>
+    </div>
+</ul>
+
+<h3 id="header8" onclick="toggleStatus('header8')">Brighter Pathways Brooklyn</h3>
+<div id="date-header8" class="hidden">
+    <p>Date: <span id="timestamp-header8"></span></p>
+    <label><input type="radio" id="draft-header8" name="status-header8"> Draft</label>
+    <label><input type="radio" id="final-header8" name="status-header8"> Final</label>
+</div>
+
+<h4 id="header9" onclick="toggleStatus('header9')">DOCUMENTATION TIPS</h4>
+<div id="date-header9" class="hidden">
+    <p>Date: <span id="timestamp-header9"></span></p>
+    <label><input type="radio" id="draft-header9" name="status-header9"> Draft</label>
+    <label><input type="radio" id="final-header9" name="status-header9"> Final</label>
+</div>
+<ul>
+    <li id="item47" onclick="toggleStatus('item47')">EPISODES</li>
+    <div id="date-item47" class="hidden">
+        <p>Date: <span id="timestamp-item47"></span></p>
+        <label><input type="radio" id="draft-item47" name="status-item47"> Draft</label>
+        <label><input type="radio" id="final-item47" name="status-item47"> Final</label>
+    </div>
+    <ul>
+        <li id="item48" onclick="toggleStatus('item48')">In Netsmart be careful to do all your work in the correct episode:</li>
+        <div id="date-item48" class="hidden">
+            <p>Date: <span id="timestamp-item48"></span></p>
+            <label><input type="radio" id="draft-item48" name="status-item48"> Draft</label>
+            <label><input type="radio" id="final-item48" name="status-item48"> Final</label>
+        </div>
+        <ul>
+            <li id="item49" onclick="toggleStatus('item49')">4041P (Pre-admission)</li>
+            <div id="date-item49" class="hidden">
+                <p>Date: <span id="timestamp-item49"></span></p>
+                <label><input type="radio" id="draft-item49" name="status-item49"> Draft</label>
+                <label><input type="radio" id="final-item49" name="status-item49"> Final</label>
+            </div>
+            <li id="item50" onclick="toggleStatus('item50')">4041 (Active Treatment)</li>
+            <div id="date-item50" class="hidden">
+                <p>Date: <span id="timestamp-item50"></span></p>
+                <label><input type="radio" id="draft-item50" name="status-item50"> Draft</label>
+                <label><input type="radio" id="final-item50" name="status-item50"> Final</label>
+            </div>
+            <li id="item51" onclick="toggleStatus('item51')">4041C (Continuing Care)</li>
+            <div id="date-item51" class="hidden">
+                <p>Date: <span id="timestamp-item51"></span></p>
+                <label><input type="radio" id="draft-item51" name="status-item51"> Draft</label>
+                <label><input type="radio" id="final-item51" name="status-item51"> Final</label>
+            </div>
+        </ul>
+    </ul>
+    <li id="item52" onclick="toggleStatus('item52')">PREADMISSION</li>
+    <div id="date-item52" class="hidden">
+        <p>Date: <span id="timestamp-item52"></span></p>
+        <label><input type="radio" id="draft-item52" name="status-item52"> Draft</label>
+        <label><input type="radio" id="final-item52" name="status-item52"> Final</label>
+    </div>
+    <ul>
+        <li id="item53" onclick="toggleStatus('item53')">We can do up to 3 Pre-admission sessions (4041P) before we need to admit a client. In Scheduling calendar they are Service Codes:</li>
+        <div id="date-item53" class="hidden">
+            <p>Date: <span id="timestamp-item53"></span></p>
+            <label><input type="radio" id="draft-item53" name="status-item53"> Draft</label>
+            <label><input type="radio" id="final-item53" name="status-item53"> Final</label>
+        </div>
+        <ul>
+            <li id="item54" onclick="toggleStatus('item54')">SUD 03 Assessment (15-29 Minutes)</li>
+            <div id="date-item54" class="hidden">
+                <p>Date: <span id="timestamp-item54"></span></p>
+                <label><input type="radio" id="draft-item54" name="status-item54"> Draft</label>
+                <label><input type="radio" id="final-item54" name="status-item54"> Final</label>
+            </div>
+            <li id="item55" onclick="toggleStatus('item55')">SUD 04 Assessment (30-74 Minutes)</li>
+            <div id="date-item55" class="hidden">
+                <p>Date: <span id="timestamp-item55"></span></p>
+                <label><input type="radio" id="draft-item55" name="status-item55"> Draft</label>
+                <label><input type="radio" id="final-item55" name="status-item55"> Final</label>
+            </div>
+            <li id="item56" onclick="toggleStatus('item56')">SUD 05 Assessment (75+ Minutes)</li>
+            <div id="date-item56" class="hidden">
+                <p>Date: <span id="timestamp-item56"></span></p>
+                <label><input type="radio" id="draft-item56" name="status-item56"> Draft</label>
+                <label><input type="radio" id="final-item56" name="status-item56"> Final</label>
+            </div>
+            <li id="item57" onclick="toggleStatus('item57')">SUD05 ASSESSMENT- EXTENDED SHOULD BE YOUR FIRST SESSION since it is 75 MINUTES.</li>
+            <div id="date-item57" class="hidden">
+                <p>Date: <span id="timestamp-item57"></span></p>
+                <label><input type="radio" id="draft-item57" name="status-item57"> Draft</label>
+                <label><input type="radio" id="final-item57" name="status-item57"> Final</label>
+            </div>
+        </ul>
+    </ul>
+    <li id="item58" onclick="toggleStatus('item58')">ADMISSION DAY</li>
+    <div id="date-item58" class="hidden">
+        <p>Date: <span id="timestamp-item58"></span></p>
+        <label><input type="radio" id="draft-item58" name="status-item58"> Draft</label>
+        <label><input type="radio" id="final-item58" name="status-item58"> Final</label>
+    </div>
+    <ul>
+        <li id="item59" onclick="toggleStatus('item59')">Clerical staff must change the episode from 4041P to 4041 before any sessions are done.</li>
+        <div id="date-item59" class="hidden">
+            <p>Date: <span id="timestamp-item59"></span></p>
+            <label><input type="radio" id="draft-item59" name="status-item59"> Draft</label>
+            <label><input type="radio" id="final-item59" name="status-item59"> Final</label>
+        </div>
+        <li id="item60" onclick="toggleStatus('item60')">Make sure your appointment is scheduled in the correct episode.</li>
+        <div id="date-item60" class="hidden">
+            <p>Date: <span id="timestamp-item60"></span></p>
+            <label><input type="radio" id="draft-item60" name="status-item60"> Draft</label>
+            <label><input type="radio" id="final-item60" name="status-item60"> Final</label>
+        </div>
+        <li id="item61" onclick="toggleStatus('item61')">After a client is Admitted (4041) your sessions are completed as service code:</li>
+        <div id="date-item61" class="hidden">
+            <p>Date: <span id="timestamp-item61"></span></p>
+            <label><input type="radio" id="draft-item61" name="status-item61"> Draft</label>
+            <label><input type="radio" id="final-item61" name="status-item61"> Final</label>
+        </div>
+        <ul>
+            <li id="item62" onclick="toggleStatus('item62')">SUD06- Individual Therapy (Brief) (25-44 Minutes)</li>
+            <div id="date-item62" class="hidden">
+                <p>Date: <span id="timestamp-item62"></span></p>
+                <label><input type="radio" id="draft-item62" name="status-item62"> Draft</label>
+                <label><input type="radio" id="final-item62" name="status-item62"> Final</label>
+            </div>
+            <li id="item63" onclick="toggleStatus('item63')">SUD07- Individual Therapy (Normative) (45+ Minutes)</li>
+            <div id="date-item63" class="hidden">
+                <p>Date: <span id="timestamp-item63"></span></p>
+                <label><input type="radio" id="draft-item63" name="status-item63"> Draft</label>
+                <label><input type="radio" id="final-item63" name="status-item63"> Final</label>
+            </div>
+        </ul>
+    </ul>
+</ul>
+
+<p>Notes: All work in the community is logged as LBHP</p>
+<p>[Date]</p>
+
+</body>
+</html>
